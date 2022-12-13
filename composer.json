@@ -1,0 +1,25 @@
+{
+    "name": "nchoquet/norsys-bank",
+    "description": "Banque virtuelle pour développer nos activités internes Norsys Sophia",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "NorsysBank\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nicolas Choquet",
+            "email": "nchoquet@norsys.fr"
+        }
+    ],
+    "require": {
+        "lbuchs/webauthn": "^1.1",
+        "firebase/php-jwt": "^6.3",
+        "symfony/var-dumper": "^6.2"
+    },
+    "scripts": {
+        "post-install-cmd": "cp ./patchs/lbuchs/webauthn/WebAuthn.php ./vendor/lbuchs/webauthn/src/WebAuthn.php",
+        "post-update-cmd": "cp ./patchs/lbuchs/webauthn/WebAuthn.php ./vendor/lbuchs/webauthn/src/WebAuthn.php"
+    }
+}
